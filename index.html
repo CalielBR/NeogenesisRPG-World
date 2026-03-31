@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Protocolo Neogenesis 2326: Onde o colapso geopolítico de 2026 moldou um futuro de sucata e radiação.">
+    <title>NEOGENESIS 2326 | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="active">Início</a>
+        <a href="personagens.html">Jokers ♠️</a>
+        <a href="capitulos.html">Missões</a>
+        <a href="bestiario.html">Bestiário</a>
+        <a href="calendario.html">Agenda</a>
+        <a href="atualizacoes.html">Atualizações</a>
+        <a href="playlist.html">Playlist</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <!-- BANNER SLIDER -->
+    <div class="banner-slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="assets/img/banner/bang.webp" alt="Personagens">
+                <a href="personagens.html" class="btn-banner">Ver Dossiês</a>
+            </div>
+            <div class="slide">
+                <img src="assets/img/banner/portal.webp" alt="Bestiário">
+                <a href="bestiario.html" class="btn-banner">Ver Bestiário</a>
+            </div>
+            <div class="slide">
+                <img src="assets/img/banner/logs.webp" alt="Logs">
+                <a href="capitulos.html" class="btn-banner">Ver Logs</a>
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+        <!-- Dots -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div class="container">
+        <h1>Protocolo Neogenesis: Ano 2326</h1>
+
+        <p class="typewriter" id="terminal-output">
+            <span class="typed-text"></span><span class="cursor">|</span>
+        </p>
+
+        <div class="card hidden" id="synopsis">
+            <h2>A Sinopse</h2>
+            <p>O relógio do juízo final travou em 2026. O que começou como uma disputa por hegemonia energética escalou
+                para o Colapso de Vetor Zero: uma guerra curta que desligou a civilização em menos de setenta horas. As
+                megacidades, antes promessas de transcendência digital, tornaram-se túmulos de aço e vidro.</p>
+
+            <p>Trezentos anos depois, o mundo de 2326 é uma ferida aberta. A atmosfera, saturada por nanites defeituosos
+                e radiação residual, forçou a biologia humana a um pacto faustiano com a sucata. As antigas metrópoles
+                são hoje Zonas de Ferro, carcaças onde a elite se fundiu a servidores, enquanto o resto da humanidade
+                vaga pelo Deserto de Vidro.</p>
+
+            <p>Você é um herdeiro desse caos. Entre implantes de sucata e a fome de energia, a sobrevivência é o único
+                comando de sistema que o hardware ainda executa.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Protocolo Neogenesis - Documentação de Campo</p>
+    </footer>
+
+    <!-- MÁQUINA DE ESCREVER -->
+    <script>
+        const phrases = [
+            "> ESTABELECENDO CONEXÃO...",
+            "> ACESSO CONCEDIDO!",
+            "> INICIANDO PROTOCOLO NEOGENESIS..."
+        ];
+
+        const typingSpeed = 50;
+        const pauseBetweenPhrases = 2000; // 2 segundos de espera
+
+        const typedTextEl = document.querySelector("#terminal-output .typed-text");
+        const synopsisEl = document.getElementById("synopsis");
+
+        let phraseIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+
+            if (charIndex < currentPhrase.length) {
+                typedTextEl.textContent += currentPhrase.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingSpeed);
+            } else {
+                // Se não for a última frase, aguarda 2s, limpa o texto e vai para a próxima
+                if (phraseIndex < phrases.length - 1) {
+                    setTimeout(() => {
+                        typedTextEl.textContent = "";
+                        charIndex = 0;
+                        phraseIndex++;
+                        type();
+                    }, pauseBetweenPhrases);
+                } else {
+                    // Na última frase, mantém o texto e libera a sinopse
+                    synopsisEl.style.display = "block";
+                }
+            }
+        }
+
+        type();
+    </script>
+
+    <script>
+        // BANNER SLIDER
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+            for (let i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active", "");
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        document.querySelector(".prev").addEventListener("click", () => plusSlides(-1));
+        document.querySelector(".next").addEventListener("click", () => plusSlides(1));
+    </script>
+</body>
+
+</html>

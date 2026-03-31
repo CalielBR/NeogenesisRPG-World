@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Bestiário de Neo-Tokyo: Análise de ameaças biológicas e mutações sintéticas de 2326.">
+    <title>NEOGENESIS 2326 | Bestiário</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="personagens.html">Jokers ♠️</a>
+        <a href="capitulos.html">Missões</a>
+        <a href="bestiario.html" class="active">Bestiário</a>
+        <a href="calendario.html">Agenda</a>
+        <a href="atualizacoes.html">Atualizações</a>
+        <a href="playlist.html">Playlist</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="container">
+        <h1>Bestiário de Neo-Tokyo</h1>
+        <p class="swipe-hint">« Deslize ou clique para folhear os arquivos »</p>
+
+        <div class="bestiary-book">
+            <!-- Botões de Navegação Globais (Ficam sempre no topo e fora da área de rolagem) -->
+            <div class="navigation-buttons">
+                <button id="prev-page-btn" disabled>Voltar</button>
+                <button id="next-page-btn">Próximo</button>
+            </div>
+
+            <!-- Página 1 -->
+            <article class="page active">
+                <img src="assets/img/bestiary/Boris.webp" alt="Anêmico de Rua" class="img-float-right">
+                <h3>ESPÉCIE: Os Anêmicos</h3>
+                <p><strong>ID:</strong> Homo Sapiens V-Gen</p>
+                <p><strong>Status:</strong> <span class="status-active">Ameaça Ativa</span></p>
+
+                <hr>
+
+                <section>
+                    <h2>O Paradoxo de Morozov</h2>
+                    <p>Diferente dos mutantes da Zona Cinza, os Anêmicos são "vampiros de proveta". Criados pela
+                        Morozov-Biotech, sofreram falha genética catastrófica.</p>
+                    <p>Dependem de plasma sintético ou do roubo de sangue biológico através de <strong>Sifões de
+                            Pulso</strong>.</p>
+                </section>
+
+                <section>
+                    <h2>Fisiologia e Combate</h2>
+                    <ul>
+                        <li><strong>Dependência:</strong> Sem sangue, órgãos entram em colapso.</li>
+                        <li><strong>UV-Sensível:</strong> Luz solar causa queimaduras químicas.</li>
+                        <li><strong>Blood Rage:</strong> Perdem a razão em troca de velocidade extrema.</li>
+                    </ul>
+                </section>
+
+                <blockquote class="rainbow-quote">
+                    "O sangue é apenas o combustível. O que nos move é o medo de desligar." — Boris, Desertor.
+                </blockquote>
+
+                <span class="page-number">Pág. 01</span>
+            </article>
+
+            <!-- Página 2 -->
+            <article class="page">
+                <img src="assets/img/bestiary/5-face.webp" alt="O Bandoleiro" class="img-float-right">
+                <h3>SHINOBI: O Bandoleiro (死)</h3>
+                <p><strong>ID:</strong> Desconhecido / "O Quarto Poder"</p>
+                <p><strong>Status:</strong> <span class="status-warning">DESCONHECIDO</span></p>
+
+                <hr>
+
+                <section>
+                    <h2>O Mito do Quarto Kanji</h2>
+                    <p>Relatos de batedores descrevem uma figura que transita entre as sombras de Neo-Tokyo como um
+                        fantasma metódico. Onde passa, o número <strong>4 (死 - Shi)</strong> é deixado como uma
+                        assinatura. Ele não caça por fome ou créditos; ele executa por uma estética de "justiça" que
+                        beira o ritualístico.</p>
+                    <p>Dizem que sua voz é calma como a de um analista forense, mesmo enquanto empunha o terror.</p>
+                </section>
+
+                <section>
+                    <h2>O Código do Carniceiro</h2>
+                    <ul>
+                        <li><strong>A Divina Pureza:</strong> O Bandoleiro possui um limite absoluto: crianças. Para
+                            ele, elas são a única parte não corrompida do mundo de 2326. Ele jamais as ataca e, em
+                            vários logs, foi visto agindo como um protetor violento contra quem as ameaça.</li>
+                        <li><strong>Execução Cirúrgica:</strong> Seus alvos costumam ser figuras de poder hipócritas.
+                            Ele
+                            não mata, ele "apresenta um terror psicológico a vitima sempre a forçando a tomar decisões
+                            contra sua moralidade deturpada".</li>
+                        <li><strong>Natureza Híbrida:</strong> Mistura a paciência de um predador silencioso com a
+                            curiosidade intelectual de um cirurgião.</li>
+                    </ul>
+                </section>
+
+                <blockquote class="rainbow-quote">
+                    "A tragédia exige ritmo. O mundo é um palco sujo, e eu sou o único que ainda se importa com o
+                    final." — Transmissão interceptada.
+                </blockquote>
+
+                <span class="page-number">Pág. 02</span>
+            </article>
+
+            <!-- Página 3 -->
+            <article class="page">
+                <div class="text-center">
+                    <h3 class="blink">[DADOS CRIPTOGRAFADOS]</h3>
+                    <p>Sinal de rádio interceptado na Zona Cinza...</p>
+                    <p class="page-hint">Aguardando batedores para completar o
+                        log biológico.</p>
+                </div>
+                <span class="page-number">Pág. 03</span>
+            </article>
+
+            <!-- Mais páginas podem ser adicionadas seguindo o mesmo padrão -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Protocolo Neogenesis - Documentação de Campo</p>
+    </footer>
+
+    <script>
+        // ==================== SCRIPT PARA NAVEGAR ENTRE PÁGINAS ====================
+        const pages = document.querySelectorAll('.bestiary-book .page');
+        const btnNext = document.getElementById('next-page-btn');
+        const btnPrev = document.getElementById('prev-page-btn');
+        let currentPage = 0;
+
+        function updatePagination() {
+            pages.forEach((page, index) => {
+                // Adiciona a classe active apenas na página atual
+                page.classList.toggle('active', index === currentPage);
+                // Reseta o scroll da página para o topo ao trocar
+                if (index === currentPage) page.scrollTop = 0;
+            });
+
+            // Gerencia o estado dos botões
+            btnPrev.disabled = (currentPage === 0);
+            btnNext.disabled = (currentPage === pages.length - 1);
+        }
+
+        btnNext.addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                updatePagination();
+            }
+        });
+
+        // Inicializa o estado dos botões
+        updatePagination();
+
+        btnPrev.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                updatePagination();
+            }
+        });
+    </script>
+</body>
+
+</html>

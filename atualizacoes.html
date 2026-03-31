@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Atualizações de Sistema e Arsenal para Neogenesis RPG (Savage Worlds).">
+    <title>NEOGENESIS 2326 | Atualizações</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="personagens.html">Jokers ♠️</a>
+        <a href="capitulos.html">Missões</a>
+        <a href="bestiario.html">Bestiário</a>
+        <a href="calendario.html">Agenda</a>
+        <a href="atualizacoes.html" class="active">Atualizações</a>
+        <a href="playlist.html">Playlist</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="container">
+        <h1>Sistemas & Arsenal</h1>
+
+        <!-- Categoria: Savage Worlds -->
+        <div class="card">
+            <div class="char-content">
+                <h1>Savage Worlds: Regras de Cenário</h1>
+                <section>
+                    <h2>Radiação Residual (Ambiental)</h2>
+                    <p>Em áreas do Deserto de Vidro, personagens devem realizar um teste de Vigor ao final de cada hora.
+                        Falha resulta em um nível de Fadiga que só pode ser recuperado com descontaminação química.</p>
+                </section>
+
+                <section>
+                    <h2>Hacking de Combate (Netrunning)</h2>
+                    <p>Utiliza a perícia <strong>Eletrônica</strong>. Um sucesso permite "Atordoar" dispositivos
+                        eletrônicos ou implantes biomecânicos inimigos em Alcance Inteligência.</p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Categoria: Armas -->
+        <div class="card">
+            <div class="char-content">
+                <h1>Dossiê de Armamento: Sucata Militar</h1>
+                <section>
+                    <h2>Lâmina de Alta Frequência (Katana)</h2>
+                    <ul>
+                        <li><strong>Dano:</strong> For+d8+2</li>
+                        <li><strong>PA (Penetração de Armadura):</strong> 4</li>
+                        <li><strong>Notas:</strong> Requer bateria de célula de fusão. Em um 1 natural no dado de
+                            perícia, a arma desliga.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Rifle de Pulso "Vetor-7"</h2>
+                    <ul>
+                        <li><strong>Dano:</strong> 3d6</li>
+                        <li><strong>Alcance:</strong> 24/48/96</li>
+                        <li><strong>PA:</strong> 2</li>
+                        <li><strong>Notas:</strong> Disparo Seletivo (Rajada).</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- Categoria: Relíquia Especial -->
+        <div class="card">
+            <div class="char-content">
+                <h1>Relíquia: A Redentora</h1>
+                <h3>"A Quarta Sinfonia"</h3>
+                <section>
+                    <h2>O Quarto Bandoleiro 死 </h2>
+                    <p>Esta não é apenas uma arma; é um instrumento de justiça divina. Oculta em uma maleta
+                        executiva de fibra de carbono, ela se desdobra com precisão mecânica. Utilizada pelo
+                        "justiceiro"
+                        conhecido como Bandoleiro, a arma reflete seu ódio
+                        pela hipocrisia corporativa e sua busca por voz "divina" na execução dos culpados.</p>
+                </section>
+
+                <section>
+                    <h2>Mecânicas Savage Worlds</h2>
+                    <ul>
+                        <li><strong>Dano:</strong> 2d10+2 (Arma Pesada)</li>
+                        <li><strong>PA (Penetração de Armadura):</strong> 8</li>
+                        <li><strong>Alcance:</strong> 30/60/120</li>
+                        <li><strong>Ventos do Elísio:</strong> Requer uma Ação guardá-la na maleta (Ocultar) e Modo
+                            Ataque. No modo maleta, concede +4 em testes de Furtividade para passar por
+                            inspeções.</li>
+                        <li><strong>Rendição Divina:</strong> Se o portador gastar 3 rodadas observando o alvo antes
+                            de disparar (O Ritual), o Quarto disparo ignora todas as penalidades de cobertura,
+                            iluminação e Defesas do Alvo.
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>A Salvaguarda da Inocência</h2>
+                    <p>Modificada com um sensor biométrico de aura, a "Quarta Sinfonia" possui uma trava de segurança
+                        absoluta: o gatilho trava e o sistema entra em curto-circuito se a mira for colocada sobre uma
+                        criança. Para o Bandoleiro, elas são divinas, a única pureza que a radiação de 2026 não
+                        conseguiu corromper.</p>
+                </section>
+
+                <p>
+                    <!-- Altere 'assets/img/esquematico.jpg' para o caminho da sua imagem real -->
+                    <a href="javascript:void(0)" class="contact-btn"
+                        onclick="openImageModal('assets/img/armorial/redentora.webp')">
+                        🔍 [VISLUMBRE O PARAÍSO]
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <blockquote class="quote">
+            "A tecnologia de 2025 era feita para durar. A de 2326 é feita para matar antes que a bateria acabe." —
+            Fragmento de manual técnico recuperado.
+        </blockquote>
+    </div>
+
+    <!-- Estrutura do Modal -->
+    <div id="imageModal" class="modal" onclick="closeImageModal()">
+        <!-- Container que cria a caixa preta e protege contra cliques que fecham o modal -->
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="closeImageModal()">&times;</span>
+            <img class="modal-content" id="imgFull">
+        </div>
+    </div>
+
+    <script>
+        function openImageModal(imgSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('imgFull');
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = "none";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2026 Protocolo Neogenesis - Documentação de Campo</p>
+    </footer>
+</body>
+
+</html>

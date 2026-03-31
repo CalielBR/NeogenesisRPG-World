@@ -1,0 +1,1140 @@
+/* ==================== RESET BÁSICO ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==================== BODY ==================== */
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    line-height: 1.6;
+    padding-bottom: 50px;
+    min-height: 100dvh;
+}
+
+/* ==================== NAV ==================== */
+nav {
+    background-color: #1f2833;
+    padding: 15px 20px;
+    display: flex;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: #66fcf1;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ==================== nav página ==================== */
+nav a:hover {
+    background-color: #ff0404;
+    color: #0b0c10;
+}
+
+nav a.active {
+    background-color: #fc0bc7;
+    color: #0b0c10;
+}
+
+/* Outline para links */
+a:focus {
+    outline: 2px solid #fffdfd;
+    /* muda a cor do quadrado */
+    outline-offset: 2px;
+    /* afasta um pouco do elemento */
+}
+
+/* ==================== CONTAINER ==================== */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #45a29e;
+    font-size: 2.5rem;
+}
+
+/* ==================== CARDS DE PERSONAGEM ==================== */
+.card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: #1f2833;
+    border: 1px solid #45a29e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    color: #c5c6c7;
+}
+
+/* IMAGEM DO PERSONAGEM */
+.card .img-float-right {
+    flex-shrink: 0;
+    width: 250px;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid #444;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* CONTEÚDO COM SCROLL */
+.card .char-content {
+    flex: 1;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* TITULOS DENTRO DO CARD */
+.card .char-content h2,
+.card .char-content h3 {
+    color: #66fcf1;
+    margin-bottom: 10px;
+}
+
+/* PARÁGRAFOS E LISTAS */
+.card .char-content p,
+.card .char-content ul {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* SCROLL PERSONALIZADO */
+.card .char-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card .char-content::-webkit-scrollbar-track {
+    background: #1f2833;
+}
+
+.card .char-content::-webkit-scrollbar-thumb {
+    background-color: #45a29e;
+    border-radius: 4px;
+}
+
+.card .char-content::-webkit-scrollbar-thumb:hover {
+    background-color: #66fcf1;
+}
+
+/* Scrollbar Firefox */
+.card .char-content {
+    scrollbar-width: thin;
+    scrollbar-color: #39ff14 #000;
+}
+
+/* ==================== BANNER SLIDER ==================== */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #45a29e;
+}
+
+.slides .slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 450px;
+    text-align: center;
+}
+
+.slides .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #0b0c10;
+}
+
+.slides .slide .btn-banner {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* BOTÕES DE SLIDER */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 12px;
+    margin-top: -22px;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    user-select: none;
+    transition: background 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* DOTS DO SLIDER */
+.dots {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: #66fcf1;
+}
+
+/* ==================== MÁQUINA DE ESCREVER ==================== */
+.typewriter {
+    font-family: monospace;
+    display: inline-block;
+    border-right: .15em solid #45a29e;
+    white-space: pre-wrap;
+    overflow: hidden;
+    color: #66fcf1;
+    margin-bottom: 20px;
+}
+
+/* ==================== BOTÕES ==================== */
+.contact-btn,
+.btn-banner {
+    display: inline-block;
+    background-color: #45a29e;
+    color: #0b0c10;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact-btn:hover,
+.btn-banner:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    transform: scale(1.05);
+}
+
+/* ==================== RODAPÉ ==================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f2833;
+    color: #66fcf1;
+    width: 100%;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slides .slide {
+        height: 250px;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .card .img-float-right {
+        width: 100%;
+        max-height: 250px;
+        margin-bottom: 15px;
+    }
+
+    .card .char-content {
+        max-height: 350px;
+    }
+
+    .bestiary-book .page {
+        max-height: 450px;
+    }
+}
+
+/* =========================
+   Blockquote e Quote GLOBAL
+   ========================= */
+blockquote,
+.quote {
+    margin: 1.5em 20px;
+    /* espaço acima e abaixo */
+    padding: 10px 15px;
+    /* espaçamento interno */
+    font-style: italic;
+    border-left: 4px solid #888;
+    border-radius: 8px;
+    line-height: 1.5;
+    background-color: #464545;
+    color: #fff !important;
+}
+
+/* Ajustes para desktop */
+@media (min-width: 768px) {
+
+    blockquote,
+    .quote {
+        margin: 2em auto;
+        padding: 15px 20px;
+        max-width: 600px;
+    }
+}
+
+/* =========================
+   Estilo exclusivo para Jean-Jacques
+   ========================= */
+.jacques-quote {
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    margin: 3em auto;
+    /* margem maior */
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    box-shadow:
+        blue 0px 0px 0px 2px inset,
+        rgb(255, 255, 255) 10px -10px 0px -3px,
+        rgb(31, 193, 27) 10px -10px,
+        rgb(255, 255, 255) 20px -20px 0px -3px,
+        rgb(255, 217, 19) 20px -20px,
+        rgb(255, 255, 255) 30px -30px 0px -3px,
+        rgb(255, 156, 85) 30px -30px,
+        rgb(255, 255, 255) 40px -40px 0px -3px,
+        rgb(255, 85, 85) 40px -40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover para desktop */
+@media (hover: hover) and (pointer: fine) {
+    .jacques-quote:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Ajustes para telas maiores (desktop) */
+@media (min-width: 768px) {
+    .jacques-quote {
+        font-size: 1.3rem;
+        padding: 25px;
+        margin: 4em auto;
+        max-width: 600px;
+    }
+}
+
+/* =========================
+   Estilo exclusivo para Jean-Jacques: Títulos
+   ========================= */
+.card.jacques .char-content h1 {
+    color: #ffb6c1 !important;
+    /* Rosa pastel bem nítido */
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.card.jacques .char-content h2 {
+    color: #ffd700 !important;
+    /* Amarelo dourado */
+    font-size: 1.2em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.card.jacques .char-content h3 {
+    color: #8b0000 !important;
+    /* Vermelho sangue */
+    font-size: 1.1em;
+    margin-top: 0.8em;
+}
+
+/* BARRA DE ROLAGEM EXCLUSIVA DO JACQUES */
+.card.jacques .char-content::-webkit-scrollbar-thumb {
+    background-color: #ff0000 !important;
+    /* Vermelho */
+    border-radius: 4px;
+}
+
+.card.jacques .char-content::-webkit-scrollbar-thumb:hover {
+    background-color: #8b0000 !important;
+}
+
+.card.jacques .char-content {
+    scrollbar-color: #ff0000 #1f2833 !important;
+    /* Suporte para Firefox */
+}
+
+/* =========================
+   Estilo Fallout/Cyberpunk (Outros Personagens)
+   ========================= */
+
+/* Títulos Principais (h1 e h3) em Âmbar Fosforoso */
+.card:not(.jacques) .char-content h1,
+.card:not(.jacques) .char-content h3 {
+    color: #ffb000 !important;
+    /* Âmbar Fallout */
+    text-shadow: 0 0 8px rgba(255, 176, 0, 0.6);
+    margin-bottom: 0.5em;
+}
+
+/* Subtítulos (h2 e h4) em Ciano Cyberpunk */
+.card:not(.jacques) .char-content h2,
+.card:not(.jacques) .char-content h4 {
+    color: #00f3ff !important;
+    /* Ciano Neon */
+    text-shadow: 0 0 5px rgba(0, 243, 255, 0.4);
+    margin-top: 1em;
+}
+
+/* BARRA DE ROLAGEM ÂMBAR (Exclusiva outros personagens) */
+.card:not(.jacques) .char-content::-webkit-scrollbar-thumb {
+    background-color: #ffb000 !important;
+    border-radius: 4px;
+    border: 1px solid #000;
+}
+
+.card:not(.jacques) .char-content {
+    scrollbar-color: #ffb000 #000 !important;
+    /* Firefox */
+}
+
+/* =========================
+  Máquina de escrever - Log de Missões
+   ========================= */
+.typewriter {
+    font-family: monospace;
+    display: inline-block;
+    border-right: .15em solid #45a29e;
+    white-space: pre-wrap;
+    overflow: hidden;
+    color: #66fcf1;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+/* Cards de missão */
+.mission-content .card {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    background-color: #1f2833;
+    border: 1px solid #45a29e;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #c5c6c7;
+}
+
+/* Imagem ao lado do texto */
+.mission-content .img-float-right {
+    width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #444;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Responsivo: imagens ficam centralizadas em mobile */
+@media (max-width: 768px) {
+    .mission-content .card {
+        flex-direction: column;
+    }
+
+    .mission-content .img-float-right {
+        width: 100%;
+        max-height: 250px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Texto dentro do card */
+.mission-content .log-text {
+    flex: 1;
+}
+
+
+/*  ==================== 
+    STATUS Bestiário
+    ==================== */
+.status-scheduled {
+    color: #45a29e;
+    /* cor padrão para status agendado */
+}
+
+.status-active {
+    color: #ff0000 !important;
+    /* Vermelho Vivo */
+    text-shadow: 0 0 10px #ff0000;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    animation: blink-alert 0.8s infinite;
+}
+
+/* ====================================
+   Bestiário Status de ameaça e alertas
+   ================================= */
+
+/* Efeito de piscar para o alerta */
+@keyframes blink-alert {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0.4;
+    }
+}
+
+.status-warning {
+    color: #ffff00 !important;
+    /* Amarelo Visível */
+    text-shadow: 0 0 10px #ffff00;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    animation: blink-alert 1.2s infinite;
+}
+
+.status-warning::after {
+    content: " ⚠️";
+}
+
+.status-active::after {
+    content: "☠️⚠️";
+    /* caveira + alerta */
+    margin-left: 5px;
+    /* distância do texto */
+}
+
+/* ==================== BESTIÁRIO LIVRO ==================== */
+.bestiary-book {
+    position: relative;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #0b0c10;
+    border: 1px solid #45a29e;
+    border-radius: 10px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.bestiary-book .page {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.bestiary-book .page.active {
+    display: flex;
+}
+
+.bestiary-book img.img-float-right {
+    float: right;
+    width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    margin-left: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+}
+
+.bestiary-book h3,
+.bestiary-book h2 {
+    color: #66fcf1;
+}
+
+.bestiary-book p,
+.bestiary-book ul,
+.bestiary-book li {
+    color: #c5c6c7;
+    line-height: 1.4;
+}
+
+.bestiary-book hr {
+    border: 0;
+    border-top: 1px solid #45a29e;
+    opacity: 0.3;
+    margin: 15px 0;
+}
+
+.bestiary-book .rainbow-quote {
+    font-style: italic;
+    color: #f4d03f;
+    margin-top: 10px;
+    border-left: 3px solid #ff2058;
+    padding-left: 10px;
+}
+
+.bestiary-book .page-number {
+    margin-top: 15px;
+    text-align: right;
+    color: #45a29e;
+    font-size: 0.8rem;
+}
+
+/* BOTÕES DE NAVEGAÇÃO */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    background-color: #0b0c10;
+    padding-bottom: 15px;
+    z-index: 10;
+    border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+    margin-bottom: 15px;
+}
+
+.navigation-buttons button {
+    padding: 10px 20px;
+    background-color: #45a29e;
+    color: #0b0c10;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.navigation-buttons button:hover {
+    background-color: #66fcf1;
+}
+
+/* SCROLL PERSONALIZADO */
+.bestiary-book .page::-webkit-scrollbar {
+    width: 8px;
+}
+
+.bestiary-book .page::-webkit-scrollbar-track {
+    background: #0b0c10;
+}
+
+.bestiary-book .page::-webkit-scrollbar-thumb {
+    background-color: #39ff14;
+    border-radius: 4px;
+}
+
+.bestiary-book .page::-webkit-scrollbar-thumb:hover {
+    background-color: #66ff66;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .bestiary-book img.img-float-right {
+        float: none;
+        width: 100%;
+        max-height: 250px;
+        margin: 0 0 10px 0;
+    }
+}
+
+
+/* =========================
+   Efeito Terminal CRT para toda a página
+   ========================= */
+
+/* Fonte monoespaçada e cores CRT */
+body {
+    font-family: 'Courier New', Courier, monospace !important;
+    background-color: #000 !important;
+    color: #39ff14 !important;
+    line-height: 1.8 !important;
+    min-height: 100dvh;
+}
+
+/* Links estilo terminal */
+a {
+    color: #39ff14 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline !important;
+    text-shadow: 0 0 8px #39ff14;
+}
+
+/* Botões e links de ação */
+button,
+.contact-btn,
+.btn-banner {
+    border: 1px solid #39ff14 !important;
+    color: #39ff14 !important;
+    background-color: transparent !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover,
+.contact-btn:hover,
+.btn-banner:hover {
+    background-color: #39ff14 !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px #39ff14;
+}
+
+/* Container principal */
+.container {
+    border: 2px solid #39ff14 !important;
+    box-shadow: 0 0 20px #39ff14, inset 0 0 10px #39ff14 !important;
+    background-color: #000 !important;
+    border-radius: 5px !important;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px 40px !important;
+    /* Valor padrão para Desktop */
+}
+
+/* Ajuste de padding para mobile dentro do efeito CRT */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px !important;
+        margin: 20px 10px;
+    }
+}
+
+/* Scanlines CRT (overlay) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1) 2px,
+            transparent 2px,
+            transparent 4px);
+    z-index: 9999;
+}
+
+/* Cabeçalhos e parágrafos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong,
+span,
+li {
+    color: #39ff14 !important;
+    margin-bottom: 18px;
+}
+
+/* Linhas horizontais */
+hr {
+    border: 0;
+    border-top: 1px dashed #39ff14;
+    opacity: 0.3;
+    margin: 30px 0;
+}
+
+/* Footer */
+footer {
+    color: #39ff14 !important;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-top: 50px;
+}
+
+/* Navegação */
+nav {
+    background-color: #000 !important;
+    border-bottom: 1px solid #39ff14;
+}
+
+nav a {
+    color: #39ff14 !important;
+}
+
+nav a.active,
+nav a:hover {
+    text-decoration: underline !important;
+    text-shadow: 0 0 8px #39ff14;
+}
+
+/* Scrollbars verdes CRT */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #39ff14;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #66ff66;
+}
+
+/* Animação de flicker leve */
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+}
+
+body {
+    animation: flicker 0.15s infinite;
+}
+
+/* ==================== TIMELINE GERAL==================== */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    /* Altura máxima da timeline */
+    border-left: 2px dashed #39ff14;
+    border-radius: 5px;
+    background-color: #000;
+    padding: 15px;
+    overflow: hidden;
+    /* Mantém legenda fixa */
+}
+
+/* ==================== LEGENDA TIMELINE ==================== */
+.timeline-legend {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    /* Fixa no topo */
+    background-color: #000;
+    /* Mesma cor do fundo */
+    z-index: 10;
+    padding-bottom: 10px;
+}
+
+.timeline-legend .legend {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ==================== TIMELINE COM SCROLL ==================== */
+.timeline-scroll {
+    overflow-y: auto;
+    max-height: 430px;
+    /* Altura visível da lista */
+    padding-left: 35px;
+    /* Espaço para texto */
+    padding-right: 10px;
+}
+
+/* Scroll personalizado */
+.timeline-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+    background-color: #39ff14;
+    border-radius: 4px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #66ff66;
+}
+
+/* ==================== SEÇÕES TIMELINE ==================== */
+.timeline-scroll section {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Marcador base */
+.timeline-scroll section::before {
+    content: "●";
+    /* marcador padrão */
+    position: absolute;
+    left: -35px;
+    /* distância da linha */
+    top: 5px;
+    font-size: 1.2rem;
+    color: #39ff14;
+}
+
+/* Texto */
+.timeline-scroll section h3 {
+    font-size: 1.4rem;
+    color: #39ff14;
+    margin-bottom: 5px;
+}
+
+.timeline-scroll section p {
+    font-size: 1rem;
+    color: #39ff14;
+}
+
+/* Linha horizontal */
+.timeline-scroll section hr {
+    border: 0;
+    border-top: 1px dashed #39ff14;
+    margin: 20px 0;
+    opacity: 0.3;
+}
+
+/* ==================== STATUS TIMELINE ==================== */
+.timeline-scroll section.concluido::before {
+    content: "☑️";
+    /* Check para concluído */
+}
+
+.timeline-scroll section.agendado::before {
+    content: "⌛";
+    /* Ampulheta para agendado */
+}
+
+.timeline-scroll section.cancelado::before {
+    content: "⛔";
+    /* Proibido para cancelado */
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+    .timeline-container {
+        max-height: 400px;
+        padding: 10px;
+    }
+
+    .timeline-legend {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .timeline-scroll section::before {
+        left: -25px;
+    }
+
+    .timeline-scroll section h3,
+    .timeline-scroll section p {
+        font-size: 1rem;
+    }
+}
+
+/* ==================== ESTILOS PARA PÁGINA DE CONTATO ==================== */
+.contact-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-frame {
+    position: relative;
+    border: 4px double #39ff14;
+    padding: 10px;
+    background: #000;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    max-width: 450px;
+    width: 100%;
+    /* Garante que caiba em telas pequenas */
+}
+
+.contact-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Efeito de imagem de dossiê militar/terminal */
+    filter: grayscale(1) brightness(1.1) contrast(1.2);
+    border: 1px solid #39ff14;
+}
+
+/* ==================== CLASSES UTILITÁRIAS (MOVIDAS DO HTML) ==================== */
+.hidden {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.page-hint {
+    opacity: 0.5;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+.card-ghost {
+    border-style: dotted;
+    opacity: 0.6;
+}
+
+.link-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Customização da Máquina de Escrever do Index */
+#terminal-output {
+    border-right: none !important;
+}
+
+.typewriter .cursor {
+    display: inline-block;
+    color: #39ff14;
+    margin-left: 1px;
+    animation: blink 0.7s step-start infinite;
+    font-weight: bold;
+}
+
+.typewriter .typed-text {
+    white-space: pre-wrap;
+}
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+/* ==================== ESTILOS DO MODAL (IMAGEM EXPANDIDA) ==================== */
+.modal {
+    display: none;
+    /* Escondido por padrão */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    /* Fundo quase preto */
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    /* Efeito de desfoque no fundo */
+}
+
+.modal-container {
+    position: relative;
+    background: #000;
+    border: 2px solid #39ff14;
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 1px solid #39ff14;
+    display: block;
+}
+
+.close-modal {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    color: #39ff14;
+    font-size: 40px;
+    cursor: pointer;
+    font-family: monospace;
+}

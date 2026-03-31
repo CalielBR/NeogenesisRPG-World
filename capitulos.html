@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Registros de missão e arquivos de memória recuperados do Protocolo Neogenesis.">
+    <title>NEOGENESIS 2326 | Logs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="personagens.html">Jokers ♠️</a>
+        <a href="capitulos.html" class="active">Missões</a>
+        <a href="bestiario.html">Bestiário</a>
+        <a href="calendario.html">Agenda</a>
+        <a href="atualizacoes.html">Atualizações</a>
+        <a href="playlist.html">Playlist</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Máquina de escrever -->
+        <p class="typewriter" id="typewriter"></p>
+
+        <!-- Conteúdo das missões, inicialmente oculto -->
+        <div class="mission-content hidden" id="mission-content">
+
+            <div class="card">
+                <img src="assets/img/Echoes_of_Honor.jpeg" alt="Registro de Missão 1" class="img-float-right">
+                <div class="log-text">
+                    <h3>LOG 01: O Despertar do Silício</h3>
+                    <p><strong>Status:</strong> <span class="status-pending">Arquivado</span></p>
+                    <p>O grupo despertou nas profundezas de um bunker cujos sistemas resistiram ao tempo. Entre chiados
+                        de rádio e luzes de emergência, a primeira diretriz foi estabelecida: sobreviver ao mundo que
+                        esqueceram. Este registro contém detalhes técnicos, estratégias e percepções coletadas no
+                        momento da ativação, incluindo falhas de equipamento e respostas improvisadas. Os sensores
+                        indicam presença de sinais anômalos nas áreas externas do bunker, sugerindo movimentação de
+                        unidades desconhecidas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/img/netMask.jpeg" alt="Registro de Missão 2" class="img-float-right">
+                <div class="log-text">
+                    <h3>LOG 02: Sombras no Setor 4</h3>
+                    <p><strong>Status:</strong> <span class="status-pending">Arquivado</span></p>
+                    <p>A extração transformou-se em um campo de batalha contra executores da Yakuza. O neon das ruas
+                        refletia no sangue e no óleo enquanto os herdeiros do caos testavam seus novos limites. Este log
+                        contém transcrições, fotografias de campo e relatos de sobreviventes. Todas as medidas táticas
+                        devem ser revisadas antes da próxima incursão.</p>
+                </div>
+            </div>
+
+            <div class="card card-ghost">
+                <div class="log-text">
+                    <h3 class="status-scheduled">> AGUARDANDO PRÓXIMA TRANSMISSÃO...</h3>
+                    <p>Novos dados de campo serão sincronizados após a próxima incursão no Setor de Ferro.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Protocolo Neogenesis - Documentação de Campo</p>
+    </footer>
+
+    <!-- ============================
+         SCRIPT DA MÁQUINA DE ESCREVER
+         ============================ -->
+    <script>
+        // Lista de frases que vão aparecer na máquina de escrever
+        const phrases = [
+            "POR FAVOR AGUARDE....",
+            "PERMISSÃO PARA LEITURA LIBERADA!"
+        ];
+
+        // Elementos HTML que vamos manipular
+        const typewriterEl = document.getElementById('typewriter'); // Onde as frases aparecem
+        const missionContentEl = document.getElementById('mission-content'); // Conteúdo que fica oculto inicialmente
+
+        // Variáveis de controle de posição
+        let phraseIndex = 0; // Índice da frase atual
+        let charIndex = 0;   // Índice do caractere atual da frase
+
+        // Função principal de digitação
+        function type() {
+            if (phraseIndex < phrases.length) {
+                const currentPhrase = phrases[phraseIndex];
+
+                // DIGITANDO CADA CARACTERE
+                if (charIndex < currentPhrase.length) {
+                    typewriterEl.textContent += currentPhrase.charAt(charIndex);
+                    charIndex++;
+
+                    // TEMPO ENTRE CADA LETRA
+                    // Valor em milissegundos: menor = mais rápido, maior = mais lento
+                    setTimeout(type, 50); // <-- ALTERE ESTE VALOR
+                } else {
+
+                    // PAUSA AO FINAL DA FRASE
+                    // Tempo que a frase completa fica na tela antes de apagar e passar para a próxima
+                    setTimeout(() => {
+                        typewriterEl.textContent = ""; // Limpa a frase atual
+                        phraseIndex++;                 // Avança para a próxima frase
+                        charIndex = 0;                  // Reinicia o índice de caracteres
+                        type();                         // Chama novamente a função
+                    }, 300); // <-- ALTERE ESTE VALOR PARA MUDAR O TEMPO DE EXIBIÇÃO DA FRASE
+                }
+
+            } else {
+                // FINAL DA MÁQUINA DE ESCREVER
+                // Quando todas as frases terminarem, mostramos o conteúdo das missões
+                missionContentEl.style.display = "block";
+            }
+        }
+
+        // Inicia a digitação
+        type();
+    </script>
+
+</body>
+
+</html>
